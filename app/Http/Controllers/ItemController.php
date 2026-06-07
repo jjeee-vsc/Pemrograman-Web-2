@@ -3,36 +3,90 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
-use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Api\BaseController;
+use App\Http\Requests\StoreItemRequest;
+use App\Http\Requests\UpdateItemRequest;
 
-class ItemController extends Controller
+class ItemController extends BaseController
 {
     public function index()
     {
-        return response()->json(Item::with('category')->get());
+        $items = Item::with('category')->get();
+
+        return $this->success(
+            $items,
+            'Data item berhasil ditampilkan'
+        );
     }
 
-    public function store(Request $request)
+   public function store(StoreItemRequest $request)
+{
+    $item = Item::create(
+        $request->validated()
+    );
+
+    return $this->success(
+        $item,
+        'Item berhasil ditambahkan',
+        201
+    );
+}
+
+    public function show($id)
     {
-        $item = Item::create($request->only('name', 'price', 'category_id'));
-        return response()->json($item, 201);
+        $item = Item::with('category')->find($id);
+
+        if (!$item) {
+            return $this->error(
+                'Item tidak ditemukan',
+                404
+            );
+        }
+
+        return $this->success(
+            $item,
+            'Detail item berhasil ditampilkan'
+        );
     }
 
-    public function show(Item $item)
-    {
-        return response()->json($item);
+ public function update(UpdateItemRequest $request, $id)
+{
+    $item = Item::find($id);
+
+    if (!$item) {
+        return $this->error(
+            'Item tidak ditemukan',
+            404
+        );
     }
 
-    public function update(Request $request, Item $item)
-    {
-        $item->update($request->only('name', 'price', 'category_id'));
-        return response()->json($item);
-    }
+    $item->update(
+        $request->validated()
+    );
 
-    public function destroy(Item $item)
+    return $this->success(
+        $item,
+        'Item berhasil diperbarui'
+    );
+}
+
+    public function destroy($id)
     {
+        $item = Item::find($id);
+
+        if (!$item) {
+            return $this->error(
+                'Item tidak ditemukan',
+                404
+            );
+        }
+
         $item->delete();
-        return response()->json(['message' => 'Item berhasil dihapus']);
+
+        return $this->success(
+            null,
+            'Item berhasil dihapus'
+        );
     }
 }
