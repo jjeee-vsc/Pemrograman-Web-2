@@ -1,0 +1,304 @@
+{
+  "info": {
+    "_postman_id": "d849925e-c989-4fb2-9e3b-186842a456e2",
+    "name": "Inventory API V1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54668417"
+  },
+  "item": [
+    {
+      "name": "http://127.0.0.1:8000/api/v1/items/99999",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "7|5LvqlIGkcBDRipaFqx3X7amYjP1fdeRUqeY2bfIMa149d7c1",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"<script>Laptop</script>\",\r\n    \"quantity\": 10,\r\n    \"price\": 100000,\r\n    \"category_id\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/items/99999",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "items",
+            "99999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/v1/items",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "7|5LvqlIGkcBDRipaFqx3X7amYjP1fdeRUqeY2bfIMa149d7c1",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"<script>Laptop</script>\",\r\n    \"quantity\": 10,\r\n    \"price\": 100000,\r\n    \"category_id\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/items",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/v1/items",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "7|5LvqlIGkcBDRipaFqx3X7amYjP1fdeRUqeY2bfIMa149d7c1",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"<script>Laptop</script>\",\r\n    \"quantity\": 10,\r\n    \"price\": 100000,\r\n    \"category_id\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/items",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/v1/categories",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "7|5LvqlIGkcBDRipaFqx3X7amYjP1fdeRUqeY2bfIMa149d7c1",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Elektronik\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/categories",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/v1/items",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "7|5LvqlIGkcBDRipaFqx3X7amYjP1fdeRUqeY2bfIMa149d7c1",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"azis123@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/items",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "items"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/v1/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"azis123@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://127.0.0.1:8000/api/v1/register",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Abdul Azis\",\r\n    \"email\": \"azis123@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirmation\": \"password\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/v1/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "v1",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
