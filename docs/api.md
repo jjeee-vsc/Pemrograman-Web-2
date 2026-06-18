@@ -1,60 +1,45 @@
-# Inventory API V1
+# API Documentation
 
-Base URL:
-http://127.0.0.1:8000/api/v1
+## GET /api/v1/items
 
-## Auth
+Description: Menampilkan seluruh data items.
 
-### Register
-Method: POST
-URL: /register
+Example:
 
-Body:
+GET /api/v1/items
+
+## GET /api/v1/items?category_id={id}
+
+Description: Filter items by category. Parameter category_id bersifat optional.
+
+Query Parameter:
+
+| Parameter | Type | Required | Description |
+|---|---|---|---|
+| category_id | integer | No | ID kategori yang digunakan untuk memfilter item |
+
+Example:
+
+GET /api/v1/items?category_id=1
+
+Success Response:
+
 {
-  "name": "Azis",
-  "email": "azis@gmail.com",
-  "password": "password",
-  "password_confirmation": "password"
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "quantity": 10,
+            "price": 5000000,
+            "category_id": 1
+        }
+    ]
 }
 
-Response:
+Empty Response:
+
 {
-  "success": true,
-  "data": {},
-  "message": "Register berhasil"
+    "success": true,
+    "data": []
 }
-
-### Login
-Method: POST
-URL: /login
-
-Body:
-{
-  "email": "azis@gmail.com",
-  "password": "password"
-}
-
-Response:
-{
-  "success": true,
-  "data": {
-    "token": "token"
-  },
-  "message": "Login berhasil"
-}
-
-## Items
-
-GET /items  
-POST /items  
-GET /items/{id}  
-PUT /items/{id}  
-DELETE /items/{id}
-
-## Categories
-
-GET /categories  
-POST /categories  
-GET /categories/{id}  
-PUT /categories/{id}  
-DELETE /categories/{id}
