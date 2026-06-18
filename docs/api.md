@@ -43,3 +43,10 @@ Empty Response:
     "success": true,
     "data": []
 }
+
+## Notes
+
+Endpoint mendukung filtering item menggunakan category_id.
+
+Parameter category_id bersifat optional.
+Jika tidak diberikan maka seluruh item akan ditampilkan.
